@@ -9,7 +9,7 @@ const {onToggleDropDown, isDisplayed} = useOption()
       <button className="search_container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="ionicon"
+          className="ionicon"
           viewBox="0 0 512 512"
         >
           <title>Search</title>
@@ -33,7 +33,6 @@ const {onToggleDropDown, isDisplayed} = useOption()
           type="text"
           className="search_bar"
           placeholder="Search for a country..."
-          outline="none"
         />
       </button>
       <div className="button_container" >
@@ -41,7 +40,7 @@ const {onToggleDropDown, isDisplayed} = useOption()
          <p className="filter_text">Filter by Region</p>
          <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="ionicon"
+          className="ionicon"
           viewBox="0 0 512 512"
         >
           <title>Chevron Down</title>
