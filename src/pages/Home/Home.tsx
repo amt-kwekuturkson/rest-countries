@@ -13,6 +13,7 @@ return (
       <FilterButtons />
         <div className="card_container">
             <CardList/>
+            <div className="spaceShift"></div>
         </div>   
     </div>
   </CountryProvider>
