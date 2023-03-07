@@ -1,10 +1,10 @@
 import React from "react";
 import { useOption } from "../hooks/useOption.tsx";
 
-export const FilterButtons = () => {
-  const { onToggleDropDown, isDisplayed } = useOption();
+
+export const SearchInput = () => {
+  
   return (
-    <div className="filter_container">
       <div className="search_container">
         <button className="search_button">
           <svg
@@ -33,10 +33,21 @@ export const FilterButtons = () => {
             type="text"
             className="search_bar"
             placeholder="Search for a country..."
+            onChange={search}
           />
         </button>
       </div>
+  );
+};
 
+
+
+export const DropDown = () => {
+  const { onToggleDropDown, isDisplayed } = useOption();
+  
+  
+  return (
+ 
       <div className="button_container">
         <button className="filter_button" onClick={onToggleDropDown}>
           <p className="filter_text">Filter by Region</p>
@@ -59,6 +70,7 @@ export const FilterButtons = () => {
         <div
           className="dropdown_content"
           style={{ display: isDisplayed ? "block" : "none" }}
+          onSelect={region}
         >
           <li id="africa" value="africa">
             Africa
@@ -77,6 +89,8 @@ export const FilterButtons = () => {
           </li>
         </div>
       </div>
-    </div>
+ 
   );
 };
+
+

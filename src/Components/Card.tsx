@@ -1,37 +1,23 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useFetch } from "../hooks/useFetch.tsx";
+
+
 
 export const Card = () => {
   const navigate = useNavigate();
 
-  const cardClicked = (e) => {
+  const cardClicked = () => {
     navigate(`/details/`);
-    console.log(e.target.id);
+    
   };
 
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-
-     try{ const response = await fetch(
-         'https://restcountries.com/v2/all?fields=name,capital,population,region,flag'
-      );
-      const data = await response.json();
-      console.log(data);
-      setCountries(data);
-    }catch(error){ 
-      console.log(error);
-    }
-   };
-   fetchData();
-  }, []);
+ const { countries } = useFetch('https://restcountries.com/v2/all?fields=name,capital,population,region,flag')
 
   return (
          countries.map((country) => {
             return (
              
-
               <div className="card" onClick={cardClicked} key={country.id}>
                 <div className="flag">
                   <img src={country.flag} alt="flag" />
