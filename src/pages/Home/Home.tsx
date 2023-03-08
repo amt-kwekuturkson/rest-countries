@@ -8,15 +8,20 @@ import { useFetch } from "../../hooks/useFetch.tsx";
 
 const Home = () => {
 
-    const { countries, loading } = useFetch();
+    const { countries, loading, search, region } = useFetch();
 
     
 return (
     <div className="App">
 
       <div className="filter_container">
-        <SearchButton />
-        <FilterButton />
+        <CountryProvider data ={countries} load={loading} filter={search}>
+           <SearchButton />
+        </CountryProvider>
+       <CountryProvider data ={countries} load={loading} filter={region}>
+         <FilterButton />
+       </CountryProvider>
+        
       </div>
       <CountryProvider data={countries} load={loading}>
            <CardList />

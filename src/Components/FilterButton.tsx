@@ -1,4 +1,5 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useContext} from "react";
+import { CountryContext } from "./CountryContext.tsx";
 
 
 const FilterButton = () => {
@@ -13,6 +14,10 @@ const FilterButton = () => {
     }
   }
   )
+
+  const value = useContext(CountryContext);
+  const region = value.filter;
+  if (value.load) return <p className="Loader">Loading...</p>;
     return (
  
         <div className="button_container">
@@ -41,19 +46,19 @@ const FilterButton = () => {
             ref = {dropDownRef}
             
           >
-              <li id="Africa" value="africa"  >
+              <li id="Africa" value="africa" onClick={region} >
                 Africa
               </li>
-              <li id="Americas" value="americas" >
+              <li id="Americas" value="americas" onClick={region}  >
                 Americas
               </li>
-              <li id="Asia" value="asia" >
+              <li id="Asia" value="asia" onClick={region} >
                 Asia
               </li>
-              <li id="Europe" value="europe" >
+              <li id="Europe" value="europe" onClick={region} >
                 Europe
               </li>
-              <li id="Oceania" value="oceania" >
+              <li id="Oceania" value="oceania" onClick={region} >
                 Oceania
               </li>
           </div>

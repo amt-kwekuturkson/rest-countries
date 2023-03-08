@@ -1,7 +1,11 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CountryContext } from "./CountryContext.tsx";
 
 const SearchButton = () => {
+
+  const value = useContext(CountryContext);
+  const search = value.filter;
+  if (value.load) return <p className="Loader">Loading...</p>;
     return (
         <div className="search_container">
           <button className="search_button">
@@ -31,7 +35,7 @@ const SearchButton = () => {
               type="text"
               className="search_bar"
               placeholder="Search for a country..."
-            //   onChange={search}
+              onChange={search}
             />
           </button>
         </div>
