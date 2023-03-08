@@ -1,7 +1,11 @@
 import React from "react";
 
 export const ButtonList = (props) => {
-    const arr = props.data;
+   
+  const arr = props.data;
+
+
+ 
     return (
      arr.map((el) => {
   
@@ -12,5 +16,4 @@ export const ButtonList = (props) => {
      )
   
     );
-  
   }

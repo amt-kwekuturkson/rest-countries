@@ -9,7 +9,7 @@ export const useFetch = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://restcountries.com/v2/all?fields=name,capital,population,region,flag');
+        const response = await fetch('https://restcountries.com/v2/all?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain');
         const data = await response.json();
         console.log(data);
         setLoading(false);
@@ -25,7 +25,7 @@ export const useFetch = () => {
     const word = e.target.value.toLowerCase();
     const fetchData = async () => {
         try {
-          const response = await fetch(`https://restcountries.com/v2/name/${word}?fields=name,capital,population,region,flag`);
+          const response = await fetch(`https://restcountries.com/v2/name/${word}?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain`);
           const data = await response.json();
           console.log(data);
           setCountries(data);
@@ -41,7 +41,7 @@ export const useFetch = () => {
     console.log(keyword);
     const fetchData = async () => {
         try {
-          const response = await fetch(`https://restcountries.com/v2/region/${keyword}?fields=name,capital,population,region,flag`);
+          const response = await fetch(`https://restcountries.com/v2/region/${keyword}?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain`);
           const data = await response.json();
           console.log(data);
           setCountries(data);
@@ -52,21 +52,5 @@ export const useFetch = () => {
       fetchData();
   };
 
-  const detailedInfo = (value: string) => {
-    const country = value;
-    console.log(country);
-    const fetchData = async () => {
-        try {
-          const response = await fetch(`https://restcountries.com/v2/name/${country}?fields=name,nativeName,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain`);
-          const data = await response.json();
-          console.log(data);
-          setCountries(data);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      fetchData();
-  };
-
-  return { countries, search, region, loading, detailedInfo };
+  return { countries, search, region, loading};
 };

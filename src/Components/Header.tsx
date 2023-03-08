@@ -1,12 +1,13 @@
 import React from "react";
+import { useTheme } from "../hooks/useTheme.tsx";
 import moon from "../svgs/moon-outline.svg";
 import sunny from "../svgs/sunny-outline.svg";
-import { useTheme } from "../hooks/useTheme.tsx";
 
 export const Header = () => {
-  const { onToggleTheme, isDarkTheme, isDarkImo } = useTheme();
 
-  return (
+    const { onToggleTheme, isDarkTheme, isDarkImo} = useTheme();
+
+return (
     <header className="header">
       <div className="header__container">
         <h1>Where in the world?</h1>
@@ -18,6 +19,6 @@ export const Header = () => {
         </div>
       </div>
     </header>
+)
 
-  );
-};
+}
