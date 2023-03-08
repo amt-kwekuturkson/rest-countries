@@ -5,7 +5,8 @@ const SearchButton = () => {
 
   const value = useContext(CountryContext);
   const search = value.filter;
-  if (value.load) return <p className="Loader">Loading...</p>;
+
+
     return (
         <div className="search_container">
           <button className="search_button">

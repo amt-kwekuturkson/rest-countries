@@ -4,6 +4,7 @@ import  { useState, useEffect } from "react";
 export const useFetch = () => {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +17,7 @@ export const useFetch = () => {
         setCountries(data);
       } catch (error) {
         console.log(error);
+        setError(error);
       }
     };
     fetchData();
@@ -23,7 +25,23 @@ export const useFetch = () => {
 
   const search = (e) => {
     const word = e.target.value.toLowerCase();
-    const fetchData = async () => {
+    if(word.length === 0) {
+      const fetchData = async () => {
+        try {
+          setLoading(true);
+          const response = await fetch('https://restcountries.com/v2/all?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain');
+          const data = await response.json();
+          console.log(data);
+          setLoading(false);
+          setCountries(data);
+        } catch (error) {
+          console.log(error);
+          setError(error);
+        }
+      };
+      fetchData();
+    }
+     else{  const fetchData = async () => {
         try {
           const response = await fetch(`https://restcountries.com/v2/name/${word}?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain`);
           const data = await response.json();
@@ -31,9 +49,11 @@ export const useFetch = () => {
           setCountries(data);
         } catch (error) {
           console.log(error);
+          setError(error);
+       
         }
       };
-      fetchData();
+      fetchData();}
   };
 
   const region = (e) => {
@@ -47,10 +67,11 @@ export const useFetch = () => {
           setCountries(data);
         } catch (error) {
           console.log(error);
+          setError(error);
         }
       };
       fetchData();
   };
 
-  return { countries, search, region, loading};
+  return { countries, search, region, loading, error };
 };

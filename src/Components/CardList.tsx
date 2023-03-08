@@ -12,7 +12,8 @@ const CardList = () => {
   const value = useContext(CountryContext);
 
   if (value.load) return <p className="Loader">Loading...</p>;
-
+  
+  if(value.error) return <h1>Error: {value.error}</h1>;
   const cardClicked = (e) => {
     // navigate(`/details/`);
     let name = e.currentTarget.getAttribute("id");

@@ -17,7 +17,6 @@ const FilterButton = () => {
 
   const value = useContext(CountryContext);
   const region = value.filter;
-  if (value.load) return <p className="Loader">Loading...</p>;
     return (
  
         <div className="button_container">
