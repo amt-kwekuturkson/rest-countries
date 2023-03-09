@@ -21,7 +21,7 @@ const FilterButton = () => {
  
         <div className="button_container">
           <button className="filter_button" onClick={ () => setDropdown(!dropdown)} ref = {buttonRef}>
-            <p className="filter_text">Filter by Region</p>
+            <p className="filter_text" >Filter by Region</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="ionicon"

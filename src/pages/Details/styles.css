@@ -134,13 +134,23 @@
   .border_countries > button {
       background-color: var(--secondaryBg-color);
       border: 0;
-      width: 96px;
+      width:fit-content;
       height: 28px;
       box-shadow: var(--box-shadow);
       color: var(--font-color);
       font-size: var(--font-size);
   }
 
+  .Loader {
+    font-size: 42px;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  @media only screen  and (max-width: 375px) {
+   
+    
+  }
   @media only screen and (min-width: 376px) and (max-width: 610px) {
     
     .country_details {
