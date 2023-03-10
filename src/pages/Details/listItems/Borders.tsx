@@ -1,5 +1,6 @@
 import React from "react";
 import { CodeConverter } from "../CodeConverter.tsx";
+import { useNavigate } from "react-router-dom";
 
 const noData = (props) => {
  
@@ -16,6 +17,17 @@ const DataList = (props) => {
   
  const arr = props.available;
 
+ const navigate = useNavigate();
+
+ const cardClicked = (e) => {
+    // navigate(`/details/`);
+    let name = e.currentTarget.getAttribute('id')
+    console.log(name);
+    navigate(`/details/`,{state:{name:name}});
+  
+  };
+
+
  return (
     
          <><p>{props.description} </p>
@@ -24,7 +36,7 @@ const DataList = (props) => {
    return(
     
 
-   <button><span>{result.data.name}</span> </button> )
+   <button onClick={cardClicked} id={result.data.name}><span>{result.data.name}</span> </button> )
 }
 )}
     </>

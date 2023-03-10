@@ -15,9 +15,12 @@ export const Details = () => {
     navigate("/");
   };
 
+  const clickedArray = [];
   const keyword = useLocation();
 
   const entered = keyword.state.name;
+    
+  
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -45,6 +48,7 @@ export const Details = () => {
   console.log(data);
 
   return (
+    
     <div className="container">
       <button id="back" onClick={navigateBack}>
         <svg

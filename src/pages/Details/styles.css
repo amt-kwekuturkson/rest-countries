@@ -9,7 +9,7 @@ body {
     --font-color: hsl(200, 15%, 8%);
     --font-color2: #848484;
     --font-size: 16px;
-    --box-shadow: 0 0px 6px -2px #808080;
+    --box-shadow: 0 0px 6px -3px #808080;
     --border-radius: 4px;
 
   }
@@ -47,7 +47,7 @@ body {
     width: 136px;
     height: 40px;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+  
   }
   #back > svg {
     width: 20px;
