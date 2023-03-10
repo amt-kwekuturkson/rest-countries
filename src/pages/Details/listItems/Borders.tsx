@@ -17,18 +17,18 @@ const DataList = (props) => {
  const arr = props.available;
 
  return (
-    <div className="border_countries">
-         <p>{props.description}</p>
+    
+         <><p>{props.description} </p>
 {  arr.map((el) => {
    const result = CodeConverter(el);
    return(
     
 
-   <button>{result.data.name} </button> )
+   <button><span>{result.data.name}</span> </button> )
 }
 )}
+    </>
 
-    </div>
   
  
    );

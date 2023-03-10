@@ -67,21 +67,21 @@ export const Details = () => {
       {data.map((item) => {
         return (
           <>
-            <div className="details_page">
+            <div className="details_container">
               <div className="flag_container">
                 <img alt="flag" src={item.flag} />
               </div>
-              <div className="details_container">
+              <div className="details_section">
                 <p id="country_name">{item.name}</p>
                 <div className="country_details">
-                  <div className="details left">
+                  <div className="details_left">
                     <Item data={item.nativeName} description={"Native Name: "} />
                     <Item data={item.population} description={"Population: "} />
                     <Item data={item.region} description={"Region: "} />
                     <Item data={item.subregion} description={"Sub Region: "} />
                     <Item data={item.capital} description={"Capital: "} />
                   </div>
-                  <div className="details right">
+                  <div className="details_right">
                     <Item
                       data={item.topLevelDomain}
                       description={"Top Level Domain: "}
@@ -96,7 +96,7 @@ export const Details = () => {
                     />
                   </div>
                 </div>
-                <div className="neighbours_container">
+                <div className="border_countries">
                   <Borders
                     data={item.borders}
                     description={"Border Countries: "}

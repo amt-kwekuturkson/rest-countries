@@ -8,7 +8,7 @@ const noData = (props) => {
 }
 const Data = (props) => {
 
-    return <p>{props.description} {props.available}</p>
+    return <p>{props.description} <span>{props.available}</span></p>
 }
 
 

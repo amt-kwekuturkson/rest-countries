@@ -18,7 +18,7 @@ const DataList = (props) => {
          <p>{props.description}
 {  arr.map((el) => {
    return(
-   <> {el.symbol} {el.name} </> )
+   <span> {el.name} </span> )
 }
 )}
     </p>

@@ -41,16 +41,18 @@ const CardList = () => {
               </div>
               <div className="country_info">
                 <div className="population">
-                  Population:{country.population}
+                  Population: <span>{country.population}</span>
                 </div>
-                <div className="region">Region:{country.region}</div>
-                <div className="capital">Capital:{country.capital}</div>
+                <div className="region">Region: <span>{country.region}</span></div>
+                <div className="capital">Capital: <span>{country.capital}</span></div>
               </div>
             </div>
-            <div></div>
           </button>
         );
       })}
+      <div className="spaceShift"></div>
+      <div className="spaceShift"></div>
+      <div className="spaceShift"></div>
       <div className="spaceShift"></div>
     </div>
   );
