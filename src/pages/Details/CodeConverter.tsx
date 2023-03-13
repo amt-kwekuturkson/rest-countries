@@ -18,7 +18,7 @@ export const CodeConverter = (props) => {
       }
     };
     fetchData();
-  }, []);
+  }, [code]);
 
   return { data };
 };
