@@ -34,7 +34,6 @@ export const useFetch = () => {
             "https://restcountries.com/v2/all?fields=name,capital,population,region,flag,subregion,languages,currencies,borders,topLevelDomain"
           );
           const data = await response.json();
-
           setLoading(false);
           setCountries(data);
         } catch (error) {
@@ -52,8 +51,10 @@ export const useFetch = () => {
           const data = await response.json();
           setCountries(data);
         } catch (error) {
-          console.log(error);
-          setError(error);
+          // console.log(error);
+          // setError(error);
+          console.log('something went wrong');
+    
         }
       };
       fetchData();

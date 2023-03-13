@@ -4,6 +4,7 @@ import FilterButton from "../../Components/FilterButton.tsx";
 import SearchButton from "../../Components/SearchButton.tsx";
 import { CountryProvider } from "../../Components/CountryContext.tsx";
 import { useFetch } from "../../hooks/useFetch.tsx";
+import { ErrorBoundary } from "../../Components/ErrorBoundary.tsx";
 
 
 const Home = () => {
@@ -13,7 +14,9 @@ const Home = () => {
     
 return (
     <div className="App">
+ 
 
+   
       <div className="filter_container">
         <CountryProvider data ={countries}  filter={search} error={error}>
            <SearchButton />
@@ -23,9 +26,12 @@ return (
        </CountryProvider>
         
       </div>
+      <ErrorBoundary >
       <CountryProvider data={countries} load={loading} error={error}>
            <CardList />
-        </CountryProvider>
+      </CountryProvider>
+      </ErrorBoundary>
+     
     </div>
 )
 }

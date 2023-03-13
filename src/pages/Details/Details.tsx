@@ -15,7 +15,7 @@ export const Details = () => {
     navigate("/");
   };
 
-  const clickedArray = [];
+
   const keyword = useLocation();
 
   const entered = keyword.state.name;
@@ -24,6 +24,7 @@ export const Details = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
     const value = entered;
@@ -44,6 +45,7 @@ export const Details = () => {
   }, [entered]);
 
   if (loading) return <p className="Loader">Loading...</p>;
+
 
   console.log(data);
 

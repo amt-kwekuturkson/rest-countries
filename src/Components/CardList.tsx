@@ -25,6 +25,7 @@ const CardList = () => {
 
   return (
     <div className="card_container">
+      
       {value.data.map((country, index: number) => {
         return (
           <button
