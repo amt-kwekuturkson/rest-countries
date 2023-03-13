@@ -1,8 +1,9 @@
 import { Routes, Route} from 'react-router-dom';
 import './App.css';
-import { Home } from './pages/Home/Home.tsx';
+import  Home  from './pages/Home/Home.tsx';
 import { Details } from './pages/Details/Details.tsx';
-import { Header } from '/Users/kaygio/Desktop/rest/src/Components/Header.tsx';
+import { Header } from './Components/Header.tsx';
+
 
 function App() {
 

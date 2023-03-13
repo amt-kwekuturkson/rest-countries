@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const CountryContext = React.createContext();
 
-export const CountryProvider = ({ children, countries }) => {
-  const [region, setRegion] = useState("all");
-  const [search, setSearch] = useState();
+export const CountryProvider = ({ children, data, load, filter, error}) => {
 
   return (
-    <CountryContext.Provider
-      value={{ countries, region, search, setRegion, setSearch }}
-    >
+    
+    <CountryContext.Provider value={{ data, load, filter, error}}>
       {children}
     </CountryContext.Provider>
   );
-};
+}
+
+
