@@ -271,6 +271,13 @@ cursor: pointer;
       margin-top: 64px;
     }
 
+    .Loader {
+      font-size: 42px;
+      text-align: center;
+      margin-top: 18%;
+    }
+  
+
   }
   @media only screen and (min-width: 376px) and (max-width: 499px) {
     .container {
@@ -317,6 +324,12 @@ cursor: pointer;
     .details_section {
       margin-bottom: 60px;
     }
+    .Loader {
+      font-size: 42px;
+      text-align: center;
+      margin-top: 18%;
+    }
+  
 
   }
   @media only screen  and (max-width: 375px) {
@@ -428,6 +441,12 @@ cursor: pointer;
     font-size: 12px;
     line-height: 16px;
   
+}
+
+.Loader {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 20%;
 }
 
 
