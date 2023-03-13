@@ -1,4 +1,4 @@
-# Rest Countries API with filtering features EXAMPLE Project
+# Rest Countries API with filtering features Project
 
 ## A fully functional project written to show how to create a Rest API and deploy.
 
