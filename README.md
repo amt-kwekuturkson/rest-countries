@@ -1,6 +1,6 @@
 # Rest Countries API with filtering features Project
 
-## A fully functional project written to show how to create a Rest API and deploy.
+## A fully functional project written to show how to create a Rest API and manipulate the result.
 
 This is a project built to along with a Typescript and React course to show how to create a functional react application using REST APIs. This project has  the following features:
 
