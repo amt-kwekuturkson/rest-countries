@@ -1,39 +1,56 @@
 import React from "react";
-import CardList from "../../Components/CardList.tsx";
-import FilterButton from "../../Components/FilterButton.tsx";
-import SearchButton from "../../Components/SearchButton.tsx";
-import { CountryProvider } from "../../Components/CountryContext.tsx";
-import { useFetch } from "../../hooks/useFetch.tsx";
-import { ErrorBoundary } from "../../Components/ErrorBoundary.tsx";
-
+import CardList from "../../components/CardList";
+import { CountryProvider } from "../../components/CountryContext";
+import { ErrorBoundary } from "../../components/ErrorBoundary";
+import FilterButton from "../../components/FilterButton";
+import SearchButton from "../../components/SearchButton";
+import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
+  const { countries, view, region, search, loading, error, word } = useFetch();
 
-    const { countries, loading, search, region, error } = useFetch();
-
-    
-return (
-    <div className="App">
- 
-
-   
-      <div className="filter_container">
-        <CountryProvider data ={countries}  filter={search} error={error}>
-           <SearchButton />
-        </CountryProvider>
-       <CountryProvider data ={countries}  filter={region} error={error}>
-         <FilterButton />
-       </CountryProvider>
-        
+  return (
+    <div>
+      <div className="display_top">
+        <div className="filter_container">
+          <CountryProvider
+            countries={countries}
+            search={search}
+            filter={undefined}
+            load={loading}
+            word={""}
+            error={error}
+          >
+            <SearchButton />
+          </CountryProvider>
+          <CountryProvider
+            countries={countries}
+            filter={region}
+            search={undefined}
+            load={loading}
+            word={""}
+            error={error}
+          >
+            <FilterButton />
+          </CountryProvider>
+        </div>
       </div>
-      <ErrorBoundary >
-      <CountryProvider data={countries} load={loading} error={error}>
-           <CardList />
-      </CountryProvider>
-      </ErrorBoundary>
-     
+      <div className="display_bottom">
+        <ErrorBoundary>
+          <CountryProvider
+            countries={view}
+            filter={undefined}
+            word={word}
+            search={undefined}
+            load={loading}
+            error={error}
+          >
+            <CardList />
+          </CountryProvider>
+        </ErrorBoundary>
+      </div>
     </div>
-)
-}
+  );
+};
 
 export default Home;

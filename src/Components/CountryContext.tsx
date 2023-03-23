@@ -1,15 +1,25 @@
 import React from "react";
+import { DataType } from "./CustomTypes";
 
-export const CountryContext = React.createContext();
+export const CountryContext = React.createContext<DataType>({} as DataType);
 
-export const CountryProvider = ({ children, data, load, filter, error}) => {
-
+interface Child extends DataType {
+  children: React.ReactNode;
+}
+export const CountryProvider = ({
+  children,
+  countries,
+  load,
+  filter,
+  word,
+  search,
+  error,
+}: Child) => {
   return (
-    
-    <CountryContext.Provider value={{ data, load, filter, error}}>
+    <CountryContext.Provider
+      value={{ countries, load, filter, search, word, error }}
+    >
       {children}
     </CountryContext.Provider>
   );
-}
-
-
+};

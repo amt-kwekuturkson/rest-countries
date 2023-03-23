@@ -1,24 +1,27 @@
 import React from "react";
 
-
-const noData = (props) => {
- 
-
-    return <p>{props}</p>
-}
-const Data = (props) => {
-
-    return <p>{props.description} <span>{props.available}</span></p>
+interface ItemType {
+  data: string | number | string[];
+  description: string;
 }
 
+const noData = (props: string) => {
+  return <p>{props}</p>;
+};
+const Data = (props: ItemType) => {
+  return (
+    <p>
+      {props.description} <span>{props.data}</span>
+    </p>
+  );
+};
 
-export const Item = (props) => {
+export const Item = (props: ItemType) => {
+  const data: string | number | string[] = props.data;
+  const description: string = props.description;
 
-  const available = props.data;
- const description = props.description;
-
-  if (available) {
-    return Data({description,available});
+  if (data) {
+    return Data({ description, data });
   }
   return noData(description);
-}
+};
